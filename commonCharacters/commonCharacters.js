@@ -14,4 +14,28 @@
 
 var commonCharacters = function(string1, string2) {
   // TODO: Your code here!
+  var res = "";
+  var  obj = {};
+  var arr1 = string1.split("");
+  var arr2 = string2.split("");
+  arr1.forEach(function(element,i){
+ 	obj[element] = 1;	
+  })
+  arr2.forEach(function(element1,i){
+  	if(obj[element1] > 0 ){
+  		obj[element1]++;
+  	}
+  	else{
+  		obj[element1]=1
+  	}
+  })
+ for(var key in obj){
+ 	if(obj[key]>1){
+ 		res+=key
+ 	}
+ }
+return res
+
+
+  
 };
