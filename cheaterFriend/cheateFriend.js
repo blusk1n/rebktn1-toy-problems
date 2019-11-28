@@ -17,3 +17,23 @@
 //
 // Example:
 // removNb(26) should return [ {15, 21}, {21, 15} ]
+
+function removeNb(n){
+	var arr = [];
+	var sum = 0;
+	for(var i = 1; i<n+1; i++){
+		arr.push(i)		
+	}
+	for(var i = 1; i<n+1; i++){
+		sum =arr.reduce(function(acc,sum){return acc+sum})
+	}
+	console.log(sum)
+
+}
+
+
+
+
+//fix one number and keep incriment the number every time the loop complete ; 
+//check if the num * i === reduce all number expect the 2 number ;
+//if true push the num and i to and array of packs
