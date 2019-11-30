@@ -35,4 +35,21 @@
 
 var bubbleSort = function(array) {
   // Your code here.
+
+  function recurse(array) {
+    for (var i = 0, j = 1; i < array.length, j < array.length; i++, j++) {
+      var num = array[i];
+      var num2 = array[j]
+      if (array[j] < array[i]) {
+        array[j] = num;
+        array[i] = num2
+      }
+    }
+    return array
+  };
+  for (var i = 0; i < array.length; i++) {
+    recurse(array)
+    //console.log(array)
+  }
+  return array
 };
