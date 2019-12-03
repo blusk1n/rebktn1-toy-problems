@@ -22,11 +22,11 @@
     var storage = [];
     var minValueStorage = [];
     
+  };
   // add an item to the top of the stack
     this.push = function(value) {
 
-      if (!minValueStorage.length ||
-          value <= minValueStorage[minValueStorage.length - 1]) {
+      if (!minValueStorage.length || value <= minValueStorage[minValueStorage.length - 1]) {
         minValueStorage.push(value);
       }
       storage.push(value);
@@ -34,7 +34,6 @@
 
   // remove an item from the top of the stack
     this.pop = function() {
-
 
       var value = storage.pop();
       if (value === minValueStorage[minValueStorage.length - 1]) {
@@ -56,5 +55,4 @@
     
     };
 
-  };
 
