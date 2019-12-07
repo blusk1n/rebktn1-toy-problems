@@ -14,38 +14,36 @@ x will always be a positive integer, and s will never be empty
 */
 
 
-function pairsBears(str,n){
-	var arr = str.split("");
-	var maleCount = [];
-	var femaleCount = [];
-	var result = "";
-	if(str === ""){
-		return false
-	}
-	for(var values of arr){
-		if(values ===  "B"){
-			maleCount.push(values)
-			
+function pairsBears(str, n) {
+  var arr = str.split("");
+  var maleCount = [];
+  var femaleCount = [];
+  var result = "";
+  if (str === "") {
+    return false
+  }
+  for (var values of arr) {
+    if (values === "B") {
+      maleCount.push(values)
 
-		}
-		if(values === "8"){
-			femaleCount.push(values)
-		}
-	}
 
-	if(maleCount.length > femaleCount.length){
-		maleCount.length = femaleCount.length;
-	}
-	else{
-		femaleCount.length = maleCount.length  ;
-	}
-	for(var i = 0 ;i < maleCount.length ; i++){
-		result+=maleCount[i]+femaleCount[i]
-	}
-	if(femaleCount.length < n){
-		return [result , false]
-	} 
-	else{
-		return result
-	}
+    }
+    if (values === "8") {
+      femaleCount.push(values)
+    }
+  }
+
+  if (maleCount.length > femaleCount.length) {
+    maleCount.length = femaleCount.length;
+  } else {
+    femaleCount.length = maleCount.length;
+  }
+  for (var i = 0; i < maleCount.length; i++) {
+    result += maleCount[i] + femaleCount[i]
+  }
+  if (femaleCount.length < n) {
+    return [result, false]
+  } else {
+    return result
+  }
 }
