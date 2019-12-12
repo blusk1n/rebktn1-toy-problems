@@ -12,5 +12,19 @@
   *
   */
 var deepEquals = function(apple, orange) {
-  return JSON.stringify(apple) === JSON.stringify(orange)
+var res1 = [];
+var res2 = [];
+  function recurse(obj,arr){
+    for (key in obj){
+      arr.push(key)
+      arr.push(obj[key])
+      if(typeof obj[key] === "object"){
+        recurse (obj[key],arr)
+      }
+    }
+  }
+recurse(apple,res1)
+recurse(orange,res2)
+return res1.join(",") === res2.join(",")
+
 };
