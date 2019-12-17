@@ -33,8 +33,11 @@
 
 'use strict';
 
-var compose = function() {
+var compose = function(variable,cb1,cb2) {
+	return cb2(cb1(variable))
 };
 
-var pipe = function() {
+var pipe = function(number,cb1,cb2) {
+	return cb2(cb1(number))
+
 };
