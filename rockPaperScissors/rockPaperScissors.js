@@ -18,7 +18,17 @@
 *
 */
 
-var rockPaperScissors = function (
-) {
+var rockPaperScissors = function (n) {
   // TODO: your solution here
+  var result = []
+  return randomly = function(){
+  var str=""
+  var RPS = ["R","P","S"]
+  for(var i = 0 ; i<n ; i++){
+      str += RPS[Math.floor(Math.random() * 3)]
+  }
+  result.push(str)
+  return result
+    }
+    
 };
