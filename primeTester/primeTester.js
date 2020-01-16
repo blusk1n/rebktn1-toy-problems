@@ -9,4 +9,13 @@ primeTester(1) // false
 
 */
 
-function primeTester(n) {}
+function primeTester(n) {
+    for(i = 2 ; i < n ;i++){
+        let strNum = n / i
+        if(strNum.toString().split(".").length > 1){
+            return true
+        }
+        return false
+    }
+}
+

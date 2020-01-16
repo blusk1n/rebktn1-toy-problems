@@ -45,6 +45,7 @@ var Tree = function(value) {
 Tree.prototype.addChild = function(child) {
   if (!child || !(child instanceof Tree)) {
     child = new Tree(child);
+
   }
 
   if (!this.isDescendant(child)) {
@@ -86,4 +87,20 @@ Tree.prototype.removeChild = function(child) {
   } else {
     throw new Error('That node is not an immediate child of this tree');
   }
+};
+
+
+Tree.prototype.countLeaves = function() {
+	function innerFunction(tree){
+		count = 0 
+		if(tree.children.length === 0){
+			return count+=1;
+		}else if(tree.children.length){
+			tree.children.forEach(function(elm){		
+	  		count += innerFunction(elm);			
+			});	
+		}
+		return count
+	}
+	return innerFunction(this)
 };

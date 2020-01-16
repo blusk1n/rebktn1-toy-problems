@@ -42,3 +42,31 @@ spiralTraversal([[ 1 ], [ 2 ], [ 3 ], [ 4 ]])	// [ 1, 2, 3, 4 ]
 
 spiralTraversal([[ 1, 2, 3, 4, 5, 6, 7 ]]) // [ 1, 2, 3, 4, 5, 6, 7 ]
 */
+var spiralTraversal = (spiral)=>{
+  let res={};
+  let arr = []
+  for(i=0;i<spiral.length;i++){
+    res[i]= spiral[i]
+  }
+  arr.push(...res[0])
+  delete res[0]
+  console.log(res)
+  console.log(arr)
+  var spin =(res,arr)=>{
+    let firstL = []
+    let lastL=[]
+    let middleL=[]
+    for(val in res){
+      firstL.push(res[val][2])
+     // console.log(firstL)
+      lastL.push(res[val][0])
+     // console.log(lastL)
+      middleL.push(res[val][1])
+     // console.log(middleL)
+    }
+    return arr.concat(firstL,lastL,middleL)
+  }
+  return  spin(res,arr)
+   
+}
+
