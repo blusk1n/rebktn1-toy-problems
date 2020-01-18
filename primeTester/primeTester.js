@@ -10,6 +10,8 @@ primeTester(1) // false
 */
 
 function primeTester(n) {
+    if(n=== 1) return false 
+    if(n === 2) return true
     for(i = 2 ; i < n ;i++){
         let strNum = n / i
         if(strNum.toString().split(".").length > 1){
