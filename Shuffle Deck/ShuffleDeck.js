@@ -1,5 +1,6 @@
 // Shuffle Deck
-// Given an array containing a deck of cards, implement a function that shuffles the deck. The helper function orderedDeck() is not necessary for your solution; it is provided to create an ordered deck if you debug your code in the console or using snippets.
+// Given an array containing a deck of cards, implement a function that shuffles the deck. The helper function orderedDeck() is not necessary for your solution; it is provided to create an ordered deck if
+// you debug your code in the console or using snippets.
 // Example:
 //      var deck = orderedDeck();     // ["A♥","2♥","3♥",...,"J♦","Q♦","K♦"]
 //      shuffleDeck(deck);            // ["2♠","J♣","A♦", ... ,"7♣","8♣","K♠"]
@@ -25,14 +26,37 @@
 
 // You've got Helpers!
 
-// var orderedDeck = function() {
-//   var suits = [ '♥', '♣', '♠', '♦' ];
-//   var values = [ 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
-//   var deck = [];
-//   suits.forEach(function(suit) {
-//     values.forEach(function(value) {
-//       deck.push(value + suit);
-//     });
-//   });
-//   return deck;
-// };
+var orderedDeck = function() {
+  var suits = [ '♥', '♣', '♠', '♦' ];
+  var values = [ 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
+  var deck = [];
+  suits.forEach(function(suit) {
+    values.forEach(function(value) {
+      deck.push(value + suit);
+    });
+  });
+  return deck;
+};
+var deck = orderedDeck()
+
+var shuffleDeck = function(deck){
+    var arr = []
+    shuffledDeck=[]
+    for(var i = 0 ; i< deck.length;i+=2){
+        arr.push([deck[i],deck[i+1]])
+    }
+    console.log(arr)
+    var random =(arr)=>{
+      if(arr.length === 0){
+          return 
+      }
+      else{
+        let randomI = Math.floor(Math.random()* arr.length )
+        shuffledDeck.push(arr[randomI])
+        random(arr.splice(randomI,1))
+      }
+     
+    }
+
+    random(arr)
+}

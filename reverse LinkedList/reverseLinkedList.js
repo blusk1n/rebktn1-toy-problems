@@ -24,7 +24,23 @@ function Node (val) {
   obj.next = null; 
   return obj;
 }
-​
-var reverseLinkedList = function(linkedList) {
-  // your code here...
-};
+var linkedList = new Node(1)
+linkedList.next = new Node(2)
+linkedList.next.next = new Node(3)
+linkedList.next.next.next = new Node(6)
+linkedList.next.next.next.next = new Node(8)
+
+function reverseLinkedList(linkedList) {
+    var current  = linkedList;
+    var prev = null;
+    var next = null;
+
+    while (current) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+
+    }
+    return prev;
+}
